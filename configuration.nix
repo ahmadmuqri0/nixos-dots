@@ -73,13 +73,25 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Git config
+  programs.git.enable = true;
+  programs.git.config = {
+    user = {
+      name = "ahmadmuqri0";
+      email = "muqrisuhaimi25@gmail.com";
+    };
+    init = {
+      defaultBranch = "main";
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     vim
     wget
-    git
+    wl-clipboard
   ];
 
   # Enable the OpenSSH daemon.
