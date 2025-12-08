@@ -6,6 +6,7 @@
     # Language Servers
     lua-language-server
     nixd
+    stylua
 
     # Needed for neovim
     clang
