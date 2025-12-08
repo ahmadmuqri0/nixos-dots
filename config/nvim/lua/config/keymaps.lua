@@ -8,10 +8,10 @@ map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr =
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
-vim.keymap.set("n", "J", "mzJ`z")       -- Remap joining lines
+vim.keymap.set("n", "J", "mzJ`z") -- Remap joining lines
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- Keep cursor in place while moving up/down page
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")       -- center screen when looping search results
+vim.keymap.set("n", "n", "nzzzv") -- center screen when looping search results
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Navigate to end/start of the line
@@ -120,5 +120,7 @@ end
 
 -- lazygit
 if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
+  map("n", "<leader>gG", function()
+    Snacks.lazygit()
+  end, { desc = "Lazygit (cwd)" })
 end

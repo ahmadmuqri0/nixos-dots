@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   users.users.muqri = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -8,4 +9,3 @@
     ];
   };
 }
-

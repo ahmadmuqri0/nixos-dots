@@ -1,19 +1,19 @@
 return {
   { -- This helps with php/html for indentation
-     'captbaritone/better-indent-support-for-php-with-html',
+    "captbaritone/better-indent-support-for-php-with-html",
   },
   { -- This helps with ssh tunneling and copying to clipboard
-     'ojroques/vim-oscyank',
+    "ojroques/vim-oscyank",
   },
   { -- Show historical versions of the file locally
-      'mbbill/undotree',
+    "mbbill/undotree",
   },
   { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
   { -- Show CSS Colors
-      'brenoprata10/nvim-highlight-colors',
-      config = function()
-        require('nvim-highlight-colors').setup({})
-      end
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require("nvim-highlight-colors").setup({})
+    end,
   },
   {
     "jake-stewart/multicursor.nvim",

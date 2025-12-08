@@ -1,10 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     vim
     wget
     nautilus
     waybar
-    kitty 
+    kitty
     lazygit
   ];
 

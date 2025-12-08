@@ -1,4 +1,11 @@
-{ config, pkgs, lib, inputs, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   home.packages = with pkgs; [
     ripgrep
     fd
@@ -7,12 +14,13 @@
     lua-language-server
     nixd
     stylua
+    nixfmt-rfc-style
 
     # Needed for neovim
     clang
     go
   ];
-  
+
   nix.nixPath = [ "nixpkg=${inputs.nixpkgs}" ];
 
   programs.neovim = {

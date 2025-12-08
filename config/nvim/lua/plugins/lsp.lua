@@ -33,22 +33,22 @@ return {
         settings = {
           nixd = {
             nixpkgs = {
-              expr = "import <nixpkgs> { }",
+              expr = "import (builtins.getFlake(toString ./.)).inputs.nixpkgs { }",
             },
             formatting = {
-              command = { "alejandra" },
+              command = { "nixfmt" },
             },
             options = {
               nixos = {
-              expr = '(builtins.getFlake "/home/muqri/nixos-dots").nixosConfigurations.artemis.options',
+                expr = "let flake = builtins.getFlake(toString ./.); in flake.nixosConfigurations.artemis.options",
               },
               home_manager = {
-                  expr = '(builtins.getFlake "/home/muqri/nixos-dots").homeConfigurations.artemis.options',
+                expr = "let flake = builtins.getFlake(toString ./.); in flake.nixosConfigurations.artemis.options.home-manager.users.type.getSubOptions []",
               },
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     },
   },
   config = function(_, opts)

@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   home.packages = with pkgs; [
     zsh-fzf-tab
@@ -24,7 +23,7 @@
 
       nrs = "sudo nixos-rebuild switch --flake $HOME/nixos-dots";
       nc = "$EDITOR $HOME/nixos-dots";
-      
+
       fetch = "fastfetch --config examples/13";
 
       ls = "eza -l --icons --color=always --group-directories-first";
@@ -50,7 +49,7 @@
 
   programs.zoxide = {
     enable = true;
-    options = ["--cmd cd"];
+    options = [ "--cmd cd" ];
     enableZshIntegration = true;
   };
 
