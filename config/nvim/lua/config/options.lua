@@ -1,65 +1,77 @@
 -- OPTIONS
-local set = vim.opt
+local opt = vim.opt
 
 --line nums
-set.relativenumber = true
-set.number = true
+opt.relativenumber = true
+opt.number = true
 
 --disable wrap
-set.wrap = false
+opt.wrap = false
+
+--disable the default ruler
+opt.ruler = false
+opt.scrolloff = 4
+
+--confirm to save changes before exiting modified buffer
+opt.confirm = true
 
 -- indentation and tabs
-set.tabstop = 2
-set.shiftwidth = 2
-set.autoindent = true
-set.expandtab = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.autoindent = true
+opt.expandtab = true
+opt.shiftround = true
+opt.shiftwidth = 2
+
+--dont show mode since we have a statusline
+opt.showmode = false
 
 -- search settings
-set.ignorecase = true
-set.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- appearance
-set.termguicolors = true
-set.background = "dark"
-set.signcolumn = "yes"
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- cursor line
-set.cursorline = true
+opt.cursorline = true
 
 -- 80th column
-set.colorcolumn = "80"
+opt.colorcolumn = "80"
 
 -- clipboard
-set.clipboard:append("unnamedplus")
+opt.clipboard:append("unnamedplus")
 
 -- backspace
-set.backspace = "indent,eol,start"
+opt.backspace = "indent,eol,start"
 
 -- split windows
-set.splitbelow = true
-set.splitright = true
+opt.splitbelow = true
+opt.splitright = true
 
 -- dw/diw/ciw works on full-word
-set.iskeyword:append("-")
+opt.iskeyword:append("-")
 
 -- keep cursor at least 8 rows from top/bot
-set.scrolloff = 8
+opt.scrolloff = 8
 
 -- undo dir settings
-set.swapfile = false
-set.backup = false
-set.undodir = os.getenv("HOME") .. "/.vim/undodir"
-set.undofile = true
-set.undolevels = 10000
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.undolevels = 10000
 
 -- incremental search
-set.incsearch = true
+opt.incsearch = true
 
 -- faster cursor hold
-set.updatetime = 50
+opt.updatetime = 50
 
 -- folds
-set.fillchars = {
+opt.fillchars = {
   foldopen = "",
   foldclose = "",
   fold = " ",
@@ -67,6 +79,6 @@ set.fillchars = {
   diff = "╱",
   eob = " ",
 }
-set.foldlevel = 99
-set.foldmethod = "indent"
-set.foldtext = ""
+opt.foldlevel = 99
+opt.foldmethod = "indent"
+opt.foldtext = ""
