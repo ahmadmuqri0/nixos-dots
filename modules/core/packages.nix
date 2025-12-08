@@ -10,6 +10,7 @@
     tela-icon-theme
 
     nix-search-tv
+    gnome-tweaks
   ];
 
   fonts.packages = with pkgs; [
