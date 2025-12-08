@@ -3,6 +3,7 @@
   imports = [
     ./boot.nix
     ./xserver.nix
+    ./nvidia.nix
     ./desktop.nix
     ./packages.nix
     ./audio.nix
