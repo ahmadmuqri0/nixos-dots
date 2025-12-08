@@ -15,6 +15,7 @@
     # Gui
     gnome-tweaks
     ptyxis
+    gnome-extension-manager
   ];
 
   fonts.packages = with pkgs; [
