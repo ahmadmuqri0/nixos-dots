@@ -8,6 +8,8 @@
     lazygit
     fastfetch
 
+    nautilus
+
     ffmpegthumbnailer # Need For Video / Image Preview
   ];
 
