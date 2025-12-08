@@ -2,7 +2,8 @@
 {
   users.users.muqri = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    description = "Ahmad Muqri";
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree

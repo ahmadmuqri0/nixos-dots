@@ -1,35 +1,51 @@
-{ ... }:
+{ config, pkgs, ... }:
+
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./modules/core/default.nix
-  ];
+  imports =
+    [
+      ./hardware-configuration.nix
+      ./modules/core/default.nix
+    ];
 
   networking.hostName = "artemis";
+
+  # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set your time zone.
   time.timeZone = "Asia/Kuala_Lumpur";
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "ms_MY.UTF-8";
+    LC_IDENTIFICATION = "ms_MY.UTF-8";
+    LC_MEASUREMENT = "ms_MY.UTF-8";
+    LC_MONETARY = "ms_MY.UTF-8";
+    LC_NAME = "ms_MY.UTF-8";
+    LC_NUMERIC = "ms_MY.UTF-8";
+    LC_PAPER = "ms_MY.UTF-8";
+    LC_TELEPHONE = "ms_MY.UTF-8";
+    LC_TIME = "ms_MY.UTF-8";
   };
 
-  programs.zsh.enable = true;
-  programs.firefox.enable = true;
-
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    # Enable experimental features
     settings.experimental-features = [
       "nix-command"
         "flakes"
     ];
+    # Enable garbage collection
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
   };
-  system.stateVersion = "25.05";
+
+  system.stateVersion = "25.11";
 }
