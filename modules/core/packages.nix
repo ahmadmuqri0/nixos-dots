@@ -15,6 +15,8 @@
     tokyonight-gtk-theme
     tela-icon-theme
     nwg-look
+
+    nix-search-tv
   ];
 
   fonts.packages = with pkgs; [
