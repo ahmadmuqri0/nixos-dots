@@ -1,16 +1,20 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    # Cli
     vim
     wget
     lazygit
     fastfetch
+    nix-search-tv
 
+    # Themes
     adw-gtk3
     tela-icon-theme
 
-    nix-search-tv
+    # Gui
     gnome-tweaks
+    ptyxis
   ];
 
   fonts.packages = with pkgs; [
