@@ -6,7 +6,7 @@
     lazygit
     fastfetch
 
-    tokyonight-gtk-theme
+    adw-gtk3
     tela-icon-theme
 
     nix-search-tv
