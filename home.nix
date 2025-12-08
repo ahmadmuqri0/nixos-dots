@@ -7,6 +7,7 @@ let
   configs = {
     kitty = "kitty";
     nvim = "nvim";
+    hypr = "hypr";
     "starship.toml" = "starship.toml";
   };
 in
