@@ -2,9 +2,11 @@
 {
   imports = [
     ./boot.nix
+    ./ly.nix
     ./packages.nix
-    ./openssh.nix
     ./audio.nix
     ./user.nix
+    ./services.nix
+    ./thunar.nix
   ];
 }
