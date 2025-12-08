@@ -7,6 +7,7 @@
     waybar
     kitty
     lazygit
+    fastfetch
   ];
 
   fonts.packages = with pkgs; [
