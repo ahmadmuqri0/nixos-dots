@@ -1,4 +1,4 @@
-{profile, ...}: {
+{ ... }: {
   # Services to start
   services = {
     libinput.enable = true; # Input Handling
@@ -8,15 +8,7 @@
     blueman.enable = true; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
     gnome.gnome-keyring.enable = true;
-    upower.enable = true; # Power management (required for DMS battery monitoring)
-
-    smartd = {
-      enable =
-        if profile == "vm"
-        then false
-        else true;
-      autodetect = true;
-    };
+    # upower.enable = true; # Power management (required for DMS battery monitoring)
   };
 
 
