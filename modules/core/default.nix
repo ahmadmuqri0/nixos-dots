@@ -7,6 +7,6 @@
     ./audio.nix
     ./user.nix
     ./services.nix
-    ./thunar.nix
+    ./file-manager.nix
   ];
 }
