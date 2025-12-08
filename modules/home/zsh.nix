@@ -23,11 +23,14 @@
 
       nrs = "sudo nixos-rebuild switch --flake $HOME/nixos-dots";
       nc = "$EDITOR $HOME/nixos-dots";
+      gc = "sudo nix-collect-garbage -d";
+      lsg = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
 
       fetch = "fastfetch --config examples/13";
 
       ls = "eza -l --icons --color=always --group-directories-first";
       ll = "eza -alF --icons --color=always --group-directories-first";
+
     };
 
     initContent = ''
