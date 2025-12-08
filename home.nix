@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dots/config";
@@ -7,6 +7,7 @@ let
   configs = {
     kitty = "kitty";
     nvim = "nvim";
+    "starship.toml" = "starship.toml";
   };
 in
 
