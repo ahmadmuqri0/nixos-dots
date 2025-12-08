@@ -7,6 +7,6 @@
     ./audio.nix
     ./user.nix
     ./services.nix
-    ./file-manager.nix
+    # ./file-manager.nix
   ];
 }
