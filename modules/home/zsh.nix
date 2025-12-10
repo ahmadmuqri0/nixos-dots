@@ -24,7 +24,7 @@
       nrs = "sudo nixos-rebuild switch --flake $HOME/nixos-dots";
       nc = "$EDITOR $HOME/nixos-dots";
       gc = "sudo nix-collect-garbage -d";
-      ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       lsg = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
 
       fetch = "fastfetch --config examples/13";
@@ -40,9 +40,6 @@
       bindkey "^p" history-search-backward
       bindkey "^n" history-search-forward
       bindkey "^f" forward-char
-    '';
-    envExtra = ''
-      export EDITOR=nvim
     '';
   };
 
