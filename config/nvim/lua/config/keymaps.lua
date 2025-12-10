@@ -8,11 +8,11 @@ map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr =
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
-vim.keymap.set("n", "J", "mzJ`z") -- Remap joining lines
-vim.keymap.set("n", "<C-d>", "<C-d>zz") -- Keep cursor in place while moving up/down page
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv") -- center screen when looping search results
-vim.keymap.set("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z") -- Remap joining lines
+map("n", "<C-d>", "<C-d>zz") -- Keep cursor in place while moving up/down page
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv") -- center screen when looping search results
+map("n", "N", "Nzzzv")
 
 -- Navigate to end/start of the line
 map({ "n", "v", "x" }, "H", "_", { noremap = true, silent = true, desc = "Navigate To Start Of The Line" })
@@ -65,7 +65,7 @@ map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
 
 -- Replace all instances of whatever is under cursor (on line)
-vim.keymap.set("n", "<leader>s", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+map("n", "<leader>s", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 
 -- lazy
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
@@ -108,11 +108,11 @@ map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- Quickfix list stuff
-vim.keymap.set("n", "<leader>cl", ":cclose<CR>", { silent = true })
-vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
-vim.keymap.set("n", "<leader>cn", ":cnext<CR>zz")
-vim.keymap.set("n", "<leader>cp", ":cprev<CR>zz")
-vim.keymap.set("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "LSP Info" })
+map("n", "<leader>cl", ":cclose<CR>", { silent = true })
+map("n", "<leader>co", ":copen<CR>", { silent = true })
+map("n", "<leader>cn", ":cnext<CR>zz")
+map("n", "<leader>cp", ":cprev<CR>zz")
+map("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "LSP Info" })
 
 if vim.lsp.inlay_hint then
   Snacks.toggle.inlay_hints():map("<leader>uh")
