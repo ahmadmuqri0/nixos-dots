@@ -7,6 +7,7 @@
     lazygit
     fastfetch
     nix-search-tv
+    pciutils
 
     # Themes
     adw-gtk3
@@ -16,6 +17,19 @@
     gnome-tweaks
     ptyxis
     gnome-extension-manager
+    zapzap
+    teams-for-linux
+
+    # Gnome extensions
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.weather-oclock
+    gnomeExtensions.appindicator
+    gnomeExtensions.unblank
+    gnomeExtensions.system-monitor
+
+    # Java
+    jdk8
   ];
 
   fonts.packages = with pkgs; [
