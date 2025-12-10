@@ -89,7 +89,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     vim.opt_local.conceallevel = 0
   end,
-
 })
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist

@@ -1,16 +1,33 @@
 return {
-  { -- This helps with php/html for indentation
+  -- This helps with php/html for indentation
+  {
     "captbaritone/better-indent-support-for-php-with-html",
   },
-  { -- This helps with ssh tunneling and copying to clipboard
-    "ojroques/vim-oscyank",
-  },
-  { -- Show historical versions of the file locally
+
+  -- Show historical versions of the file locally
+  {
     "mbbill/undotree",
   },
-  { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
-  { -- Show CSS Colors
+
+  -- Show CSS Colors
+  {
     "brenoprata10/nvim-highlight-colors",
-    config = function() require("nvim-highlight-colors").setup({}) end,
+    config = function()
+      require("nvim-highlight-colors").setup({})
+    end,
+  },
+
+  -- Save session
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = {},
+  -- stylua: ignore
+  keys = {
+    { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+    { "<leader>qS", function() require("persistence").select() end,desc = "Select Session" },
+    { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+    { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
+  },
   },
 }

@@ -1,5 +1,18 @@
+-- Set leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- OPTIONS
 local opt = vim.opt
+
+-- Snack animations
+vim.g.snacks_animate = true
+
+-- Completion
+opt.completeopt = "menu,menuone,noselect"
+
+--confirm to save changes before exiting modified buffer
+opt.confirm = true
 
 --line nums
 opt.relativenumber = true
@@ -12,9 +25,6 @@ opt.wrap = false
 opt.ruler = false
 opt.scrolloff = 4
 
---confirm to save changes before exiting modified buffer
-opt.confirm = true
-
 -- indentation and tabs
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -22,6 +32,15 @@ opt.autoindent = true
 opt.expandtab = true
 opt.shiftround = true
 opt.shiftwidth = 2
+
+-- grep
+opt.grepprg = "rg --vimgrep"
+
+-- Popup blend
+opt.pumblend = 10
+
+-- Maximum number of entries in a popup
+opt.pumheight = 10
 
 --dont show mode since we have a statusline
 opt.showmode = false
@@ -37,9 +56,6 @@ opt.signcolumn = "yes"
 
 -- cursor line
 opt.cursorline = true
-
--- 80th column
-opt.colorcolumn = "80"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
@@ -69,6 +85,9 @@ opt.incsearch = true
 
 -- faster cursor hold
 opt.updatetime = 50
+
+-- format options
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 -- folds
 opt.fillchars = {
