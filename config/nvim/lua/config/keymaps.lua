@@ -124,3 +124,11 @@ if vim.fn.executable("lazygit") == 1 then
     Snacks.lazygit()
   end, { desc = "Lazygit (cwd)" })
 end
+
+-- floating terminal
+map("n", "<leader>ft", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+map({ "n", "t" }, "<c-/>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (Root Dir)" })
