@@ -8,6 +8,7 @@
     fastfetch
     nix-search-tv
     pciutils
+    tmux
 
     # Themes
     adw-gtk3
