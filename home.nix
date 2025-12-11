@@ -7,6 +7,7 @@ let
   configs = {
     nvim = "nvim";
     "starship.toml" = "starship.toml";
+    tmux = "tmux";
   };
 in
 
@@ -21,4 +22,9 @@ in
     source = create_symlink "${dotfiles}/${subpath}";
     recursive = true;
   }) configs;
+
+  home.file."Pictures/wallpapers" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dots/wallpapers";
+    recursive = true;
+  };
 }
