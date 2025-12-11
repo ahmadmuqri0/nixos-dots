@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/core/default.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/core/default.nix
+  ];
 
   networking.hostName = "artemis";
 
@@ -33,11 +32,25 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Install zsh.
+  programs.zsh.enable = true;
+
+  # Enable zram
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "lz4";
+    memoryPercent = 50;
+  };
+
   nix = {
     # Enable experimental features
     settings.experimental-features = [
       "nix-command"
-        "flakes"
+      "flakes"
     ];
     # Enable garbage collection
     gc = {
