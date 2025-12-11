@@ -1,18 +1,27 @@
 { lib, ... }:
 
-with lib.hm.gvariant;
+let
+  inherit (lib.hm.gvariant)
+    mkTuple
+    mkUint32
+    mkInt64
+    mkVariant
+    mkDouble
+    mkArray
+    ;
+in
 
 {
   dconf.settings = {
     "org/gnome/Console" = {
       last-window-maximised = true;
-      last-window-size = mkTupe [
+      last-window-size = mkTuple [
         812
         576
       ];
     };
 
-    "org/gnome/Extension" = {
+    "org/gnome/Extensions" = {
       window-height = 736;
       window-maximized = false;
       window-width = 779;
@@ -37,7 +46,7 @@ with lib.hm.gvariant;
 
     "org/gnome/Ptyxis/Profiles/d2a18649d4ac767851d9902c6937156a" = {
       label = "Default";
-      palette = "Tokyo NIght";
+      palette = "Tokyo Night";
     };
 
     "org/gnome/control-center" = {
@@ -50,35 +59,31 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/Weather" = {
-      locations = [
-        (mkVariant (mkTuple [
-          (mkUint32 2)
-          (mkVariant (mkTuple [
-            "Subang, Sultan Abdul Aziz Shah Airport"
-            "WMSA"
-            false
-            [
-              (mkTuple [
-                0.054396100838254115
-                1.7720909613738118
-              ])
-            ]
-            [ ]
-          ]))
-        ]))
-      ];
+      # locations = [
+      #   (mkVariant (mkTuple [
+      #     (mkUint32 2)
+      #     (mkVariant (mkTuple [
+      #       "Kuala Lumpur"
+      #       "WMSA"
+      #       true
+      #       [
+      #         (mkTuple [
+      #           (mkDouble "0.054396100838254115")
+      #           (mkDouble "1.7720909613738118")
+      #         ])
+      #       ]
+      #       [
+      #         (mkTuple [
+      #           (mkDouble "0.055268765464251274")
+      #           (mkDouble "1.7749998492782333")
+      #         ])
+      #       ]
+      #     ]))
+      #   ]))
+      # ];
       window-height = 506;
       window-maximized = false;
       window-width = 1071;
-    };
-
-    "org/gnome/control-center" = {
-      last-panel = "background";
-      window-state = mkTuple [
-        980
-        640
-        false
-      ];
     };
 
     "org/gnome/desktop/app-folders" = {
@@ -347,7 +352,7 @@ with lib.hm.gvariant;
       ];
     };
 
-    "org/gnome/portal/filechooser/org/gnome/Settings" = {
+    "org/gnome/portal/filechooser/org.gnome.Settings" = {
       last-folder-path = "/home/muqri/Pictures";
     };
 
@@ -448,29 +453,38 @@ with lib.hm.gvariant;
 
     "org/gnome/shell/weather" = {
       automatic-location = true;
-      locations = [
-        (mkVariant (mkTuple [
-          (mkUint32 2)
-          (mkVariant (mkTuple [
-            "Subang, Sultan Abdul Aziz Shah Airport"
-            "WMSA"
-            false
-            [
-              (mkTuple [
-                0.054396100838254115
-                1.7720909613738118
-              ])
-            ]
-            [ ]
-          ]))
-        ]))
-      ];
+      # locations = [
+      #   (mkVariant (mkTuple [
+      #     (mkUint32 2)
+      #     (mkVariant (mkTuple [
+      #       "Kuala Lumpur"
+      #       "WMSA"
+      #       true
+      #       [
+      #         (mkTuple [
+      #           (mkDouble "0.054396100838254115")
+      #           (mkDouble "1.7720909613738118")
+      #         ])
+      #       ]
+      #       [
+      #         (mkTuple [
+      #           (mkDouble "0.055268765464251274")
+      #           (mkDouble "1.7749998492782333")
+      #         ])
+      #       ]
+      #     ]))
+      #   ]))
+      # ];
     };
 
     "org/gnome/software" = {
       check-timestamp = mkInt64 1765418936;
       first-run = false;
       flatpak-purge-timestamp = mkInt64 1765355282;
+    };
+
+    "org/gnome/system/location" = {
+      enabled = true;
     };
 
     "org/gnome/tweaks" = {
