@@ -9,6 +9,7 @@
     ./audio.nix
     ./user.nix
     ./services.nix
+    ./flatpak.nix
     ./programs.nix
   ];
 }
