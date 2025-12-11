@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
+  # Enable Flatpak
   services = {
-    flatpak.enable = true; # Enable Flatpak
+    flatpak.enable = true;
   };
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
