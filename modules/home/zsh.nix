@@ -27,6 +27,8 @@
       ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       lsg = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
 
+      lzg = "lazygit";
+
       fetch = "fastfetch --config examples/13";
 
       ls = "eza -l --icons --color=always --group-directories-first";
