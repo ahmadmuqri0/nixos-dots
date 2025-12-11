@@ -18,8 +18,6 @@
     gnome-tweaks
     ptyxis
     gnome-extension-manager
-    zapzap
-    teams-for-linux
 
     # Gnome extensions
     gnomeExtensions.blur-my-shell
