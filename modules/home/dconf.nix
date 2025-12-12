@@ -134,8 +134,8 @@ in
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/muqri/.config/background";
-      picture-uri-dark = "file:///home/muqri/.config/background";
+      picture-uri = "file:///home/muqri/Pictures/wallpapers/sushi.jpg";
+      picture-uri-dark = "file:///home/muqri/Pictures/wallpapers/sushi.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -221,7 +221,7 @@ in
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/muqri/.config/background";
+      picture-uri = "file:///home/muqri/Pictures/wallpapers/sushi.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
