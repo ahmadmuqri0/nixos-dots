@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.07"
+  ];
+
   environment.systemPackages = with pkgs; [
     # Cli
     vim
@@ -18,6 +22,9 @@
     gnome-tweaks
     ptyxis
     gnome-extension-manager
+    brave
+    obs-studio
+    ventoy
 
     # Gnome extensions
     gnomeExtensions.blur-my-shell
